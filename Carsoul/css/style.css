@@ -1,0 +1,40 @@
+* {
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+
+.box {
+	width: 1000px;
+	height: 500px;
+	margin: 50px auto;
+	border: solid 1px red;
+}
+
+.nav {
+	float: left;
+}
+
+.nav li {
+	width: 200px;
+	height: 30px;
+	background: #999;
+	margin-bottom: 5px;
+}
+.nav li.decorate{
+	background: red;
+}
+.right {
+	width: 780px;
+	height: 500px;
+	float: right;
+	position: relative;
+}
+
+.page {
+	width: 780px;
+	height: 500px;
+	position: absolute;
+	border: none;
+	display: none;
+}
