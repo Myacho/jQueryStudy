@@ -1,0 +1,42 @@
+*{
+	padding: 0;
+	margin: 0;
+	list-style: none;
+}
+.box{
+	width: 790px;
+	height: 339px;
+	border: 2px solid red;
+	margin: 100px auto;
+	position: relative;
+}
+.pic li{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: none;
+}
+.digit{
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	font-size: 0;
+}
+.digit li{
+	width: 20px;
+	height: 20px;
+	background: #333;
+	color: #fff;
+	text-align: center;
+	line-height: 20px;
+	font-size: 14px;
+	border-radius: 50%;
+	display: inline-block;
+	margin: 0 5px;
+	cursor: pointer;
+}
+.digit li.active{
+	background: red;
+}
