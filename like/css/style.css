@@ -1,0 +1,25 @@
+.box{
+	width: 500px;
+	border: 1px solid #999;
+	margin: 50px auto;
+	padding: 20px;
+}
+.container .btn{
+	display: inline-block;
+	cursor: pointer;
+}
+.container .btn i{
+	display: inline-block;
+	vertical-align: middle;		
+	width: 20px;
+	height: 20px;
+	/*border: 1px solid #999;*/
+	background: url(../img/dislike.png);
+}
+.container .btn b{
+	/*border: 1px solid #999;*/
+	vertical-align: middle;
+}
+.container .btn.on i{
+	background-image: url(../img/like.png);
+}

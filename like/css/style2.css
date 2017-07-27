@@ -1,0 +1,31 @@
+.box{
+	width: 500px;
+	border: 1px solid #999;
+	margin: 50px auto;
+	padding: 20px;
+}
+.container .btn{
+	display: inline-block;
+	cursor: pointer;
+}
+.container .btn i{
+	display: inline-block;
+	vertical-align: middle;		
+	width: 100px;
+	height: 100px;
+	/*border: 1px solid #999;*/
+	background: url(../img/web_heart_animation.png);
+}
+.container .btn b{
+	/*border: 1px solid #999;*/
+	vertical-align: middle;
+}
+@keyframes act{
+	from{background-position:left ;}
+	to{background-position:right ;}
+}
+.container .btn.on i{
+	/*forwards让动画停在最后一帧
+	 图片2900px宽，每帧100px，走28步*/
+	animation: act 2s forwards steps(28);
+}
