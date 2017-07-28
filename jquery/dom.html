@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>DOM节点操作</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+//			//创建节点
+//			var box = $('<div id="box">节点</div>');
+//			//插入节点
+//			$("body").append(box);
+
+            //在指定元素内部的后面插入节点
+			//$("div").append('<strong>DOM</strong>');
+//			$("div").append(function(index,html){
+//				//html为原节点的内容
+//				return '<strong>DOM</strong>' + index + html;
+//			});
+			
+			
+			//将指定元素移入指定元素content的后面
+//			$("strong").appendTo("div");//移入操作，不需要再创建节点
+			
+			
+			//讲节点插入到指定元素的前面
+//			$("div").prepend('<strong>DOM</strong>');
+//			$("div").prepend(function(index,html){
+//				//html为原节点的内容
+//				return '<strong>DOM</strong>' + index + html;
+//			});
+			
+//			$("strong").prependTo("div");
+			
+			//向指定元素外部的后面插入节点
+			//$("div").after('<strong>DOM</strong>');
+//			$("div").after(function(index,html){
+//				//html为原节点的内容
+//				return '<strong>DOM</strong>' + index + html;
+//			});
+			
+			//向指定元素外部的前面插入节点
+			//$("div").before('<strong>DOM</strong>');
+//			$("div").before(function(index,html){
+//				//html为原节点的内容
+//				return '<strong>DOM</strong>' + index + html;
+//			});
+			
+			//将指定节点移入指定元素content外部的后面
+//			$("strong").insertAfter("div");
+
+			//将指定节点移入指定元素content外部的前面
+			$("strong").insertBefore("div");
+		});
+	</script>
+	</head>
+	<body>
+		
+		<div>节点操作</div>
+		<strong>DOM</strong>
+	</body>
+	
+</html>
