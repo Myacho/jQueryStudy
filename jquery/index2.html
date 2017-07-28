@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>CSS的操作二</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	<script type="text/javascript">
+		$(function(){
+//			alert(typeof parseInt($("div").css("width")));
+//			alert(typeof $("div").width());
+//			$("div").width(500);
+//			$("div").width("500px");
+
+//			$("div").width(function(index,width){
+//				return width - 300 + "px";//虽然会自己添加单位，但还是建议自己添加单位
+//			});
+            
+            //没有内外边距时四个值相同
+//          alert($("div").width());
+//          alert($("div").innerWidth());//获取元素宽度，包含内边距padding
+//          alert($("div").outerWidth());//获取元素宽度，包含内边距padding和边框border
+//          alert($("div").outerWidth(true));//获取元素宽度，包含内边距padding和边框border和外边距margin
+            
+          //  alert($("div").offset().left);
+          //offset相对视口，position相对父元素
+//          alert($("div").offset().top);
+//          alert($("div").position().top);
+//          alert($("strong").offset().top);
+//          alert($("strong").position().top);   
+            
+          //  alert($(window).scrollTop());
+            $(window).scrollTop(300);
+            
+		});
+	</script>
+	</head>
+	<body>
+		<div style="position: relative;">
+			<strong style="position: absolute;top: 1px;">www.baidu.com</strong>
+		</div>
+		<div>
+			<strong>www.baidu.com</strong>
+		</div>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+	</body>
+	
+</html>
