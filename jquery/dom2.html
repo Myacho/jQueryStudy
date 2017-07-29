@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>DOM节点操作</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	    <script type="text/javascript">
+	    	$(function() {
+//	    		$("div").wrap("<strong></strong>");
+//	    		$("div").wrap("<strong/>");
+//	    		$("div").wrap("<strong class='b'></strong>");
+//	    		$("div").wrap("<strong>123</strong>");
+//	    		$("div").wrap("<strong><em></em></strong>");
+	    		
+//	    		$("div").wrap($("strong").get(0));
+//	    		$("div").wrap(document.createElement("strong"));
+//	    		$("div").wrap(function(index){
+//	    			return "<strong>" + index + "</strong>";
+//	    		});
+	    		
+//	    		$("div").wrap("<strong></strong>");
+//	    		$("div").unwrap();
+	    		
+//	    		$("div").wrap("<strong><em></em></strong>");
+//	    		$("div").unwrap();
+//	    		$("div").unwrap();
+	    		
+//	    		$("div").wrap("<strong></strong>");
+//	    		$("div").wrapAll("<strong></strong>");
+//	    		$("div").wrapAll(document.createElement("strong"));
+
+
+//	    		$("div").wrapInner("<strong></strong>");
+//	    		$("div").wrapInner(document.createElement("strong"));
+//	    		$("div").wrapInner(function(index){
+//	    			return "<strong>" + index + "</strong>";
+//	    		});    
+	    		
+	    		
+	    		//复制节点
+	    		$("div").click(function(){
+	    			alert("www.baidu.com");
+	    			
+	    		});
+	    		//$("div").clone().appendTo("body");//复制的节点点击没有反应
+	    		//$("div").clone(true).appendTo("body");
+	    		//删除节点
+	    		//$("div").remove();
+	    		//$("div").remove(".box");
+	    		
+	    		//删除后再添加回来，节点失去了click行为
+	    		//$("div").remove().appendTo("body");
+	    		
+	    		//保留事件行为的删除
+	    		//$("div").detach();
+	    		//$("div").detach().appendTo("body");
+	    		
+	    		//清空节点里的内容，但保留标签
+	    		//$("div").empty();
+	    		
+	    		//替换节点
+	    		//$("div").replaceWith("<span>DOM</span>");
+	    		$("<span>DOM</span>").replaceAll("div");
+ 			});
+	    </script>
+	</head>
+	<body>	
+		<!--<strong>123</strong>-->
+		<div class="box">节点操作</div>
+		<div>节点操作</div>
+	</body>
+	
+</html>
