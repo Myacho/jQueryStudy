@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>表单选择器、过滤器</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+	    <script type="text/javascript">
+	    	$(function() {
+//	    		alert($("input").eq(1).val());//这种写法语义不清晰
+//	    		alert($("input[type = password]").val());//语义清晰一点
+//	    		alert($("input[name = pass]").val());
+//	    		alert($("input").length);
+//	    		alert($(":input").length);//能显示表单中所有表单元素的个数
+//	    		alert($(":input[name=city]").length);
+//	    		alert($(":text").length);//选择单行文本框，不包括密码框
+//	    		alert($(":password[name=pass]").length);//:password  :checkbox  :radio  :submit等
+//	    		alert($(":radio").length);
+//	    		alert($(":radio[name=sex]").eq(1).val());
+//	    		alert($(":radio[name=sex]").last().val());	    		
+//	    		alert($("form:hidden").length);
+	    		
+	    		/*过滤器*/
+//	    		alert($("form :enabled").length);//form :enabled中间有空格
+//	    		alert($("form :disabled").length);
+//	    		alert($("form :checked").length);
+	    		alert($("form :selected").length);
+	    		alert($("form :selected").get(0));//返回的是option，默认首选第一个，可以加multiple
+	    		alert($("form :selected").length);
+ 			});
+	    </script>
+	</head>
+	<body>	
+		<form>
+			<input type="text" disabled="disabled" name="user" value="123" />
+			<input type="password" name="pass" value="456" />
+			<input type="radio" name="sex" value="男" checked="checked"/>男
+			<input type="radio" name="sex" value="女" />女
+			<textarea></textarea>
+			<select name="city" multiple="multiple">
+				<option>1</option>
+				<option>2</option>
+				<option>3</option>
+			</select>
+			<button></button>
+		</form>
+	</body>
+	
+</html>
