@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>基础事件二</title>
+		<script type="text/javascript" src="http://code.jquery.com/jquery-3.2.1.js"></script>
+		<!--这个插件可以用来检测和恢复的api或特性,jQuery和删除已被弃用的1.9版-->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.4.1.js" ></script>
+		<script type="text/javascript">
+			$(function() {
+				/*主要区别为当作用于多个元素时*/				
+				//鼠标移入移出
+//				$("div").mouseover(function(){
+//					$(this).css("background","red");
+//				}).mouseout(function(){
+//					$(this).css("background","green");
+//				});
+				
+				//鼠标穿入穿出
+//				$("div").mouseenter(function(){
+//					$(this).css("background","red");
+//				}).mouseleave(function(){
+//					$(this).css("background","green");
+//				});
+								
+//				$("div").mouseover(function(){
+//					//鼠标移入子节点会触发mouseover,mouseout同理
+//					$("strong").html(function(index,value){
+//						return value + "1";
+//					});
+//				});
+				
+//				$("div").mouseenter(function(){
+//					//enter不会触发子节点，leave同理
+//					$("strong").html(function(index,value){
+//						return value + "1";
+//					});
+//				});
+				
+//				$("input").keydown(function(){
+//					alert("键盘按下");
+//				});
+//				$("input").keyup(function(){
+//					alert("键盘按下并弹起");
+//				});
+//				$("input").keydown(function(e){
+//					alert(e.keyCode);//按下a返回65
+//				});
+//				$("input").keypress(function(e){
+//					alert(e.charCode);//按下a返回97
+//				});
+				
+				
+				/*focus,blur事件触发是当前元素，focusin，focusout可以是子元素*/				
+//				$("input").focus(function(){
+//					alert("光标激活");
+//				});
+//				$("input").blur(function(){
+//					alert("光标丢失");
+//				});
+//				$("input").focusin(function(){
+//					alert("光标激活");
+//				});
+//				$("input").focusout(function(){
+//					alert("光标丢失");
+//				});
+				//focus,blur必须是当前元素才能激活，放在div上没有效果
+//				$("div").focus(function(){
+//					alert("光标激活");
+//				});
+//              $("div").blur(function(){
+//					alert("光标丢失");
+//				});
+
+				//focusin,focusout可以是子元素激活
+//				$("div").focusin(function(){
+//					alert("光标激活");
+//				});
+//				$("div").focusout(function(){
+//					alert("光标丢失");
+//				});
+				
+				
+				/*复合事件*/
+				//mouseenter和mouseleave的结合体
+//				$("div").hover(function(){
+//					$(this).css("background","red");
+//				},function(){
+//					$(this).css("background","green");
+//				});
+				
+				
+				/*toggle背景点击切换效果,可以传递n个函数  jquery1.9版本已删除,可以用if else代替*/
+				//$("div").toggle();//隐藏的效果
+				//$("div").toggle("slow");
+				$("div").toggle(function(){
+					$(this).css("background","red");
+				},function(){
+					$(this).css("background","green");
+				},function(){
+					$(this).css("background","yellow");
+				});
+				
+				
+//              var flag = 1;
+//              $("div").click(function(){
+//              	if (flag == 1) {
+//              		$(this).css("background","red");
+//              		flag = 2;
+//              	}
+//              	else if (flag == 2) {
+//              		$(this).css("background","green");
+//              		flag = 3;
+//              	}
+//              	else if (flag == 3) {
+//              		$(this).css("background","yellow");
+//              		flag = 1;
+//              	}
+//              });
+                
+                
+			});
+		</script>
+	</head>
+
+	<body>	
+		<!--<input type="text" value="" />-->
+		<div style="width: 200px;height: 200px;background: green;">
+			<!--<input type="text" value="" />-->
+			<!--<p style="width: 100px;height: 100px;background: yellow;"></p>-->
+		</div>
+		<strong></strong>
+	</body>
+
+</html>
