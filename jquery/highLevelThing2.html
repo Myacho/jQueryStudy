@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件委托</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<!--这个插件可以用来检测和恢复的api或特性,jQuery和删除已被弃用的1.9版-->
+		<script type="text/javascript" src="http://code.jquery.com/jquery-migrate-1.4.1.js" ></script>
+		<!--高版本中的jquery已经删除live、die，改成on，live不支持连缀调用-->
+		<script type="text/javascript">
+			$(function(){
+				//bind绑定了三个事件
+//				$(".button").bind("click",function(){
+//				alert("事件不委托");	
+//				});
+
+                //使用live绑定的是document，而不是button，所以，永远只会绑定一次事件
+//				$(".button").live("click",function(){
+//				alert("事件不委托");	
+//				});
+
+
+				
+				//动态绑定   bind无法动态绑定事件  live(on)可以动态绑定事件,因为事件绑定在document上
+				//.live绑定在documen上，而点击.button其实是冒泡到document上
+				//并且点击document时，需要验证event.type（是不是click）和event.target（是不是.button）
+//				$(".button").bind("click",function(){
+//				$(this).clone().appendTo("#box");//克隆的按钮没有绑定click事件
+//				});
+//				$(".button").live("click",function(){
+//				$(this).clone().appendTo("#box");//克隆的按钮没有绑定click事件
+//				});
+                //on与click语法不同
+//				$("#box").on("click",".button",function(){
+//				$(this).clone().appendTo("#box");//克隆的按钮没有绑定click事件
+//				});
+				
+				//live不支持连缀，所以下面事件不执行
+//				$("#box").children(0).live("click",function(){
+//				$(this).clone().appendTo("#box");
+				
+				
+				//取消事件委托
+//				$(".button").live("click",function(){
+//				$(this).clone().appendTo("#box");
+//				});
+//				$(".button").die("click");//和unbind一个意思
+				
+				//复制事件行为
+//				$(".button").live("click",function(){
+//				$(this).clone(true).appendTo("#box");//clon设置为true也可以使复制的按钮绑定click事件，但是没有减少绑定的次数
+//				});
+				
+//				$(".button").live("click",function(){
+//				$('<input type="button" class="button" value="按钮" />').appendTo("#box");
+//				});
+
+				
+				//live的替代方法delegate  live语义不清晰，因为没有指定绑定了谁
+				//delegate语义清晰，绑定谁，谁就放在开头
+				$("#box").delegate(".button","click",function(){
+				$(this).clone().appendTo("#box");//克隆的按钮没有绑定click事件
+				});
+				$("#box").undelegate(".button","click");
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box" style="width: 200px;height: 200px;background: green;">
+			<input type="button" class="button" value="按钮" />
+			<!--<input type="button" class="button" value="按钮" />
+			<input type="button" class="button" value="按钮" />-->
+		</div>
+	</body>
+</html>

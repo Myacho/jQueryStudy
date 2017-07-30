@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>on、off和one</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//普通绑定.bind
+				//普通解绑.unbind
+				//事件委托.live   .delegate
+				//事件委托接触.die  .undelegate
+				
+				//新方法绑定.on
+				//新方法解绑.off
+				
+				
+//				$(".button").on("click",function(){
+//					alert("替代bind");
+//				});
+				
+				//额外数据
+//				$(".button").on("click",{user:"lee"},function(e){
+//					alert("替代bind" +"," + e.data.user);
+//				});
+				
+				//执行多个事件
+//				$(".button").on("mouseover mouseout",function(){
+//					alert("替代bind" +"," + "移入移出事件");
+//				});
+				
+				//通过对象来绑定多个事件
+//				$(".button").on({
+//					mouseover:function(){
+//						alert("移入");
+//					},
+//					mouseout:function(){
+//						alert("移出");
+//					}
+//				});
+				
+				//阻止冒泡和默认行为，同前面所学
+				//同时阻止冒泡和默认行为，两种方法
+//				$("form").on("submit",function(){
+//					return false;
+//				});
+//				$("form").on("submit",false);
+				
+				//移除事件绑定
+//				$(".button").on("click",function(){
+//					alert("替代bind");
+//				});
+//				$(".button").off("click");
+				//$(".button").off("click",fn);
+				//$(".button").off("click.abc");
+				
+				
+				//替代.live和.delegate
+//				$("#box").on("click",".button",function(){
+//					$(this).clone().appendTo("#box");
+//				});
+//				
+//				//移除事件委托
+//				$("#box").off("click",".button");
+				
+				
+				//仅一次事件触发    .one执行一次之后，自动解除事件绑定
+//				$("#box").one("click",function(){
+//					alert("仅一次事件触发");
+//				});
+				
+				$("#box").one("click",".button",function(){
+					$(this).clone().appendTo("#box");
+				});
+				
+			});
+		</script>
+	</head>
+	<body>
+		<!--<form action="l23.html">-->		
+			<div id="box" style="width: 200px;height: 200px;background: green;">
+				<input type="button" class="button" value="按钮" />
+				<!--<input type="submit" class="button" value="按钮" />-->
+			</div>
+		<!--</form>-->
+	</body>
+</html>
