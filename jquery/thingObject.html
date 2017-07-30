@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>事件对象</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				
+//				$("input").bind("click",function(e){
+//					//alert(e.type);//获取整个事件的类型
+//					//alert(typeof e.type);
+//					//alert(e.target);//获取绑定事件的DOM元素
+//					//alert(e.relatedTarget);
+//					alert(e.currentTarget);
+//                  
+//				});
+				
+				
+				//target是触发元素的DOM,你点了哪个就是哪个
+				//current是监听元素的DOM，你绑定的哪个就是哪个，同this
+//				$("div").bind("click",function(e){
+//					//alert(e.target);
+//					alert(e.currentTarget);
+//				});
+//              $("div").bind("click",function(e){
+//              	//alert(this);
+//              	alert(this == e.currentTarget);
+//              });
+//              $("div").bind("click",function(e){
+//              	alert(this == e.target);
+//              });
+             
+				
+				//邻近的元素
+//				$("span").bind("mouseover",function(e){
+//					alert(e.relatedTarget);
+//				});
+//				$("span").bind("mouseout",function(e){
+//					alert(e.relatedTarget);
+//				});
+				
+				
+//				$("input").bind("click",123,function(e){
+//              	alert(e.data);
+//              });
+//              $("input").bind("click","abc",function(e){
+//              	alert(e.data);
+//              });
+//              $("input").bind("click",[1,2,3,"a","b"],function(e){
+//              	alert(e.data);
+//              });
+//              $("input").bind("click",[1,2,3,"a","b"],function(e){
+//              	alert(e.data[3]);
+//              });
+//               $("input").bind("click",{user:"zhangsan",age:12},function(e){
+//              	alert(e.data.age);
+//              });
+                
+                
+                //页面原点，屏幕位置，页面视口
+//              $(document).bind("click",function(e){
+//              	//alert(e.pageX + "," + e.screenX + "," + e.clientX);
+//              	alert(e.pageY + "," + e.screenY + "," + e.clientY);
+//              });
+                
+                
+                //获取上一个相同事件的返回值
+//              $("input").bind("click",function(){
+//              	return 123;
+//              });
+//              $("input").bind("click",function(e){
+//              	alert(e.result);
+//              });
+                
+                
+                //获取事件触发的时间戳
+//              $("input").bind("click",function(e){
+//              	alert(e.timeStamp);
+//              });
+                
+                
+                //获取鼠标左中右键123或者键盘值
+//              $("input").bind("mousedown",function(e){
+//              	alert(e.which);
+//              });
+                
+                //判断点击按钮前是否按下了ctrl键
+                $("input").bind("click",function(e){
+                	alert(e.ctrlKey);
+                	alert(e.altKey);
+                	alert(e.shiftKey);
+                });
+                
+			
+			});
+		</script>
+	</head>
+	<body>
+		<input type="text" name="" id="" value="按钮" />
+		<div style="width: 200px; height: 200px; background: #ccc;">
+			<span style="width: 100px;height: 100px;background: #eee;display: block;"></span>
+		</div>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+		<p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p><p>1</p>
+	</body>
+</html>

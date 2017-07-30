@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>冒泡和默认行为</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				//冒泡
+//				$("input").click(function(e){
+//					e.stopPropagation();//禁止冒泡
+//					alert("input");
+//				});
+//				$("div").click(function(e){
+//					e.stopPropagation();
+//					alert("div");
+//				});
+//				$(document).click(function(){
+//					alert("document");
+//				});
+				
+				//默认行为
+				//点击超链接，跳出弹框并自动打开页面
+//				$("a").click(function(e){
+//					e.preventDefault();//阻止默认行为，跳出弹窗但不打开页面
+//					alert("baidu");
+//				});
+//				//禁止表单提交（表单提交必要form，并且form的action是别的页面，否则就会提交到自己的页面
+//				$("input").click(function(e){
+//					e.preventDefault();//阻止默认行为
+//					alert("表单");
+//				});
+				//不需要点击事件来阻止弹窗
+//				$("form").submit(function(e){
+//					e.preventDefault();//阻止默认行为
+//					alert("表单");
+//				});
+				
+				
+				//阻止默认行为和冒泡
+//				$("a").click(function(e){
+//					e.preventDefault();
+//					e.stopPropagation();
+//					alert("baidu");
+//				});
+//				$("a").click(function(e){
+//					alert("baidu");
+//					return false;
+//				});
+//				$("div").click(function(e){
+//					//e.stopPropagation();
+//					alert("div");
+//				});
+//				$(document).click(function(){
+//					alert("document");
+//				});
+				
+				
+//				$("a").click(function(e){
+//					e.preventDefault();
+//					e.stopPropagation();
+//					alert(e.isDefaultPrevented());
+//					alert(e.isPropagationStopped());
+//				});
+//				$("a").click(function(e){
+//					e.preventDefault();
+//					e.stopPropagation();
+//				});
+//				$("a").click(function(e){
+//					alert(e.isDefaultPrevented());
+//					alert(e.isPropagationStopped());
+//				});
+				
+				
+				//取消事件冒泡，并且取消后续的事件处理函数，并不能取消默认行为
+				$("a").click(function(e){
+					e.stopImmediatePropagation();
+					alert(e.isImmediatePropagationStopped());
+					alert("a");
+				});
+				$("a").click(function(e){
+					alert("baidu");
+				});
+				$("div").click(function(e){
+					//e.stopPropagation();
+					alert("div");
+				});
+				$(document).click(function(){
+					alert("document");
+				});
+			});
+		</script>
+	</head>
+	<body>
+		<div style="width: 200px; height: 200px; background: #ccc;">
+			<input type="button" name="" id="" value="按钮" />
+			<a href="http://www.baidu.com" target="_blank">百度</a>
+		</div>
+		<!--<form action="123.html" method="post">			
+			<input type="submit" value="提交"/>
+		</form>-->
+	</body>
+</html>
