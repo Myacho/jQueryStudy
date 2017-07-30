@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>高级事件</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				
+				//模拟操作
+				//模拟用户点击操作
+//				$("input").click(function(){
+//					alert("模拟用户点击操作");
+//				});
+//				$("input").trigger("click");
+
+//				$("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).trigger("click");
+
+//              $("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).click();
+				
+				
+				//trigger额外数据，只有一条时可以省略中括号，多条书局则必须放在中括号，否则除第一条数据外无法识别
+//				$("input").click(function(e,data1,data2){
+//					alert(data1 + "," + data2);
+//				}).trigger("click",["123","abc"]);
+
+//				$("input").click(function(e,data1,data2,data3,data4){
+//					alert(data1 + "," + data2 + "," + data3[1] + "," + data4.user);
+//				}).trigger("click",["123","abc",["a","b","c"],{user:"lili"}]);
+				
+//				$("input").bind("click",{user:"lee"},function(e,data1,data2,data3,data4){
+//					alert(data1 + "," + data2 + "," + data3[1] + "," + data4.user + "," + e.data.user);
+//				}).trigger("click",["123","abc",["a","b","c"],{user:"lili"}]);
+//				
+				
+				
+				//自定义事件
+//				$("input").bind("myEvent",function(){
+//					alert("自定义事件");
+//				}).trigger("myEvent");
+
+
+
+//              $("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).triggerHandler("click");
+				
+				
+				//trigger和triggerHandler比较
+				
+				//trigger提交之后没有阻止默认行为
+				//$("form").trigger("submit");
+				//trigger提交之后没有跳转，默认行为被阻止了
+				//$("form").triggerHandler("submit");
+				
+//				$("form").submit(function(e){
+//					e.preventDefault();
+//				}).trigger("submit");
+				
+//				$("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).click();
+
+//				$("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).trigger("click");
+				
+				//trigger执行了所有，而triggerHandler只执行了第一个
+//				$("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).triggerHandler("click");
+				
+//				alert($("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).trigger("click"));//返回jquery对象,可以连缀
+				
+//				$("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).trigger("click").css("color","red");
+				
+//				alert($("input").click(function(){
+//					alert("模拟用户点击操作");
+//				}).triggerHandler("click"));//无返回值时，返回undefined
+				
+//				alert($("input").click(function(){
+//					alert("模拟用户点击操作");
+//					return 123;
+//				}).triggerHandler("click"));//有返回值时，返回return值，无法实现连缀
+				
+				//trigger会冒泡，triggerHander不会冒泡
+//				$("div").bind("myEvent",function(){
+//					alert("自定义事件");
+//				});
+//				//$(".d3").trigger("myEvent");//会冒泡
+//				$(".d3").triggerHandler("myEvent");//不会冒泡
+				
+				
+				//命名空间
+				$("input").bind("click.abc",function(){
+					alert("abc");
+				});
+				$("input").bind("click.xyz",function(){
+					alert("xyz");
+				});
+				$("input").bind("mouseover.abc",function(){
+					alert("abc");
+				});
+				//$("input").unbind("click.abc");
+				//$("input").unbind(".abc");
+				//$("input").trigger("click");
+				$("input").trigger("click.abc");
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<input type="button" value="按钮" />
+		<!--<form action="l23.html" method="post">	
+			<input type="submit" value="提交"/>
+		</form>-->
+		<!--<input type="button" value="按钮一" />
+		<input type="button" value="按钮二" />
+		<input type="button" value="按钮三" />-->
+		<div class="d1">
+			<div class="d2">
+				<div class="d3">
+					div
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
