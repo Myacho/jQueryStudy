@@ -1,0 +1,20 @@
+#box{
+	width: 100px;
+	height: 100px;
+	background: red;
+	position: absolute;
+}
+.test{
+	padding: 5px;
+	margin-right: 5px;
+	background: pink;
+	float: left;
+	display: none;
+}
+#pox{
+	width: 100px;
+	height: 100px;
+	background: green;
+	position: absolute;
+	top: 150px;
+}
