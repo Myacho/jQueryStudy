@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>插件</title>
+		<link rel="stylesheet" href="css/jquery-ui.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<!--<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.js"></script>-->
+		<script type="text/javascript" src="js/jquery-validate.js" ></script>
+		<script type="text/javascript" src="js/messages_zh.js" ></script>
+		<script type="text/javascript" src="js/jquery-ui.js" ></script>
+		<script type="text/javascript">
+			$(function() {
+				//加载validate
+				$("form").validate();
+				//不得为空，给表单字段加required="required"
+				$("form input[name=user]").autocomplete({
+					source: ["c++", "java", "php", "coldfusion", "javascript", "asp", "ruby"],
+				});
+			});
+	</script>
+	</head>
+	<body>
+		<form action="123.html">
+			<p>
+				用户名：<input type="text" required="required" minlength="2" name="user">(*)</input>
+			</p>
+			<p>
+				邮 &nbsp;&nbsp;箱：<input type="email" required="required" name="email">(*)</input>
+			</p>
+			<p>
+				网 &nbsp;&nbsp;址：<input type="url" name="url"></input>
+			</p>
+			<p>
+				<input type="submit" value="提交"></input>
+			</p>
+		</form>
+	</body>
+</html>

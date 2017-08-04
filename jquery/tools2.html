@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>工具函数</title>
+		<style type="text/css">
+			#box{
+				width: 100px;
+				height: 100px;
+				background: red;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//测试
+				/*
+				var arr = [1,2,3];
+				alert($.isArray(arr));
+				
+				var fn = function(){};
+				alert($.isFunction(fn));
+				
+				//是否为空对象
+				var obj = {name:'lee'};
+				alert($.isEmptyObject(obj));
+				
+				//是否为由{}或者new Object()创造出的对象
+				var obj = {};
+				obj2 = new Object();
+				//alert(obj2);//object
+				obj3 = window;
+				obj4 = new Object('name');//赋值后变成了字符串
+				alert(obj4);//name
+				//alert($.isPlainObject(obj));//true
+				//alert($.isPlainObject(obj2));//true
+				//alert($.isPlainObject(obj3));//false
+				alert($.isPlainObject(obj4));//false
+				
+				//判断一个DOM节点是否包含另一个DOM节点
+				alert($.contains($('#box').get(0),$('#pox').get(0)));
+				
+				//输出数据类型				
+				var arr = [1,2,3];
+				alert($.type(arr));
+				
+				var num = 1.23;
+				alert($.isNumeric(num));
+				
+				//判断是不是指向window对象
+				var win = window;
+				alert($.isWindow(win));
+				
+				//将对象键值对转化为URL字符串键值对
+				var obj = {
+					name:"Lee",
+					age:18
+				};
+				alert($.param(obj));
+				
+				
+				*/
+				//预备绑定函数上下文,调整this指向
+				var obj = {
+					name:"Lee",
+					test:function(){
+						//var _this = obj;
+						//alert(_this.name);
+						alert(this.name);
+					}
+				};
+				obj.test();
+				//$("#box").click(obj.test);
+				$("#box").click($.proxy(obj,'test'));
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<div id="box">
+			<span id="pox">
+				
+			</span>
+		</div>
+	</body>
+</html>

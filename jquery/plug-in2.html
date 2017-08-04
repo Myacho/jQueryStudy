@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>自定义导航插件</title>
+		<link rel="stylesheet" href="css/plug-in2.css" />
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript" src="js/jquery.nav.js" ></script>
+			<!--//基本要点：
+			//1.插件名推荐使用jquery[插件名].js，以避免和其他js文件或库相冲突
+			//2.局部对象附加jquery.fn上，全局对象附加jquery上
+			//3.插件内部，this指向是当前的局部对象
+			//4.可以通过this.each来遍历所有元素
+			//5.所有的方法或插件必须以分号结尾，避免出现问题
+			//6.插件应该返回的是jQuery对象，以保证可链式连缀
+			//7.避免插件内部使用$，如果要使用，请传递jQuery进去-->
+			<script type="text/javascript">
+				$(function(){
+					//$.nav();
+					$(".list").eq(0).nav('pink');
+					
+//					$("input").click(function(){
+//						//普通情况下this表示原生的dom
+//						//alert(this);
+//						$(this).val('按钮');
+//					});
+				});
+			</script>
+	</head>
+	<body>
+		<input type="button" />
+		<ul class="list">
+			
+			<li>
+				导航列表
+				<ul class="nav"> 
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+				</ul>
+			</li>
+			
+			<li>
+				导航列表
+				<ul class="nav"> 
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+				</ul>
+			</li>
+			
+			<li>
+				导航列表
+				<ul class="nav"> 
+					<li>导航列表3</li>
+					<li>导航列表3</li>
+					<li>导航列表3</li>
+					<li>导航列表3</li>
+					<li>导航列表3</li>
+					<li>导航列表3</li>
+				</ul>
+			</li>
+			
+			<li>
+				导航列表
+				<ul class="nav"> 
+					<li>导航列表4</li>
+					<li>导航列表4</li>
+					<li>导航列表4</li>
+					<li>导航列表4</li>
+					<li>导航列表4</li>
+					<li>导航列表4</li>
+				</ul>
+			</li>
+			
+			<li>
+				导航列表
+				<ul class="nav"> 
+					<li>导航列表5</li>
+					<li>导航列表5</li>
+					<li>导航列表5</li>
+					<li>导航列表5</li>
+					<li>导航列表5</li>
+					<li>导航列表5</li>
+				</ul>
+			</li>
+			
+		</ul>
+		<!--<p>1</p>
+		<ul class="list">
+			<li>
+				导航列表
+				<ul class="nav"> 
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+					<li>导航列表1</li>
+				</ul>
+			</li>
+			
+			<li>
+				导航列表
+				<ul class="nav"> 
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+					<li>导航列表2</li>
+				</ul>
+			</li>
+		</ul>-->
+	</body>
+</html>

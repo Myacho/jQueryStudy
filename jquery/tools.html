@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>工具函数</title>
+		<script type="text/javascript" src="js/jquery-3.2.1.js" ></script>
+		<script type="text/javascript">
+			$(function(){
+				//字符串
+				/*
+				var str = '             jQuery          ';
+				alert(str);
+				alert($.trim(str));
+				*/
+				
+				//数组操作
+				/*
+				var arr = ['张三','李四','王五','马六'];
+				$.each(arr, function(index,value) {
+					$('#box').html($("#box").html() + (index + 1) + '.' + value + "</br>");
+				});
+				*/
+				
+				//对象操作
+				/*
+				$.each($.ajax(),function(name,fn){
+					$('#box').html($('#box').html() + name + '<br/><br/>');
+				});
+				*/
+				
+				//数据筛选
+				/*
+				var arr = [4,6,2,9,11,25,38,59];
+				var arrGrep = $.grep(arr,function(element,index){
+					//按道理是返回布尔值，但整体返回一个数组
+					return index < 5 && element < 6;//返回下标小于5，并且元素值小于6的
+				});
+				alert(arrGrep);
+				*/
+				
+				//修改数据
+				/*
+				var arr = [4,6,2,9,11,25,38,59];
+				var arrMap = $.map(arr,function(element,index){
+					//return index < 5 && element < 6;//这样按照布尔值返回
+					//return element + 1;
+					if (index < 5 && element < 6) {
+						return element + 1;
+					}
+				});
+				alert(arrMap);
+				*/
+				
+				//获取查找到元素的下标，从0开始计算
+				/*
+				var arr = [4,6,2,9,11,25,38,59];
+				alert($.inArray(11,arr));//查找11在数组中的位置
+				*/
+				
+				//合并两个数组
+				/*
+				var arr = [4,6,2,9,11,25,38,59];
+				var arr2 = [200,100,300];
+				alert($.merge(arr,arr2));
+				*/
+				
+				//删除重复的DOM元素,如果删除数字会出错(chrome下可以)
+				/* 
+				var arr = [4,6,2,9,11,25,38,59];
+				var arr2 = [2,9,4];
+				var arr3 = $.merge(arr,arr2);
+				alert(arr3);
+				alert($.unique(arr3));
+				
+				var divs = $('div').get();
+				//alert(divs);
+				divs = divs.concat($('.box').get());
+				alert(divs.length);
+				$.unique(divs);
+				alert(divs.length);
+				*/
+				
+				//合并多个DOM元素组成数组
+				alert($('li').toArray().length);//并不是jquery元素
+			
+				
+				
+			});
+		</script>
+	</head>
+	<body>
+		<!--<div id="box"></div>-->
+		
+		<!--<div></div>
+		<div></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div class="box"></div>
+		<div></div>-->
+		
+		<ul>
+			<li>1</li>
+			<li>2</li>
+			<li>3</li>
+		</ul>
+	</body>
+</html>
