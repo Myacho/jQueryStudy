@@ -107,9 +107,22 @@ body{
 	font-size: 14px;
 	color: #666;
 }
+#reg .succ{
+	display: inline-block;
+	width: 20px;
+	background: url(../img/checked.gif) no-repeat;
+}
 #reg .star{
 	font-size: 20px;
 	color: red;
+}
+#reg ol{
+	margin: 0;
+	padding: 0 0 0 15px;
+	color: red;
+}
+#reg ol li{
+	height: 20px;
 }
 #reg .text{
 	border:1px solid #ccc;
